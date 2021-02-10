@@ -58,8 +58,8 @@
           "direction": "e"
         },
         "humidity": 80,
-        "description": "Tornado",
-        "icon": "781"
+        "description": "Stormy",
+        "icon": "211"
       },
       {
         "date": 1525392000000,

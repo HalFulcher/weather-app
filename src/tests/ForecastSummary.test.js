@@ -1,5 +1,5 @@
-import React from "react";
+// import React from "react";
 
-describe("ForecastSummary", () => {
-  it("renders", () => {});
-});
+// describe("ForecastSummary", () => {
+//   it("renders", () => {});
+// });

@@ -11,6 +11,7 @@ const App = ({ forecasts, location }) => {
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
+
   return (
     <div className="weather-app">
       <LocationDetails city={location.city} country={location.country} />

@@ -1,0 +1,8 @@
+.forecast-summary__details {
+  text-decoration: underline;
+  font-size: 10px;
+}
+
+.forecast-summary {
+  line-height: 1.5;
+}
