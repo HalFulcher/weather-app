@@ -1,6 +1,6 @@
-.forecast-summary__details {
+.forecast-summary__details button {
   text-decoration: underline;
-  font-size: 10px;
+  font-size: 9px;
 }
 
 .forecast-summary {

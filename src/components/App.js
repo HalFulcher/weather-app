@@ -1,42 +1,68 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/App.css";
-import PropTypes from "prop-types";
-
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
+import getForecast from "../requests/getForecast";
+import SearchForm from "./SearchForm";
 
-const App = ({ forecasts, location }) => {
-  const [selectedDate, setSelectedDate] = useState(forecasts[0].date);
+const App = () => {
+  const [forecasts, setForecasts] = useState([]);
+  const [location, setLocation] = useState({ city: "", country: "" });
+  const [selectedDate, setSelectedDate] = useState(0);
+  const [searchText, setSearchText] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    getForecast(
+      searchText,
+      setSelectedDate,
+      setForecasts,
+      setErrorMessage,
+      setLocation
+    );
+  }, []);
+
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
 
+  const handleCitySearch = () => {
+    getForecast(setSelectedDate, setForecasts, setLocation, searchText);
+  };
+
+  const handleForecastSelect = (date) => {
+    setSelectedDate(date);
+  };
+
   return (
     <div className="weather-app">
-      <LocationDetails city={location.city} country={location.country} />
-      <ForecastSummaries forecasts={forecasts} />
-      <ForecastDetails forecast={selectedForecast} />
+      <LocationDetails
+        city={location.city}
+        country={location.country}
+        errorMessage={errorMessage}
+      />
+      <SearchForm
+        searchText={searchText}
+        setSearchText={setSearchText}
+        onSubmit={handleCitySearch}
+      />
+      {!errorMessage && (
+        <>
+          <ForecastSummaries
+            forecasts={forecasts}
+            onForecastSelect={handleForecastSelect}
+          />
+          {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
+        </>
+      )}
+      <ForecastSummaries
+        forecasts={forecasts}
+        onForecastSelect={handleForecastSelect}
+      />
+      {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
     </div>
   );
-};
-
-App.propTypes = {
-  forecasts: PropTypes.arrayOf(
-    PropTypes.shape({
-      date: PropTypes.number,
-      description: PropTypes.string,
-      icon: PropTypes.number,
-      temperature: PropTypes.shape({
-        max: PropTypes.number,
-        min: PropTypes.string,
-      }),
-    })
-  ).isRequired,
-  location: PropTypes.shape({
-    city: PropTypes.string,
-    country: PropTypes.string,
-  }).isRequired,
 };
 
 export default App;
