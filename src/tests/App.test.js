@@ -1,8 +1,10 @@
-// import { render, screen } from "@testing-library/react";
-// import App from "../components/App";
+import React from "react";
+import { render } from "@testing-library/react";
+import App from "../components/App";
 
-// test("renders learn react link", () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/Weather App/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+describe("App", () => {
+  it("renders as expected", () => {
+    const { asFragment } = render(<App />);
+    expect(asFragment).toMatchSnapshot();
+  });
+});
