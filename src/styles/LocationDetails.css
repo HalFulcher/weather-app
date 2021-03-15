@@ -1,5 +1,6 @@
 .location-details {
   display: flex;
   justify-content: center;
-  color: blue;
+  font-family: Montserrat;
+  
 }
