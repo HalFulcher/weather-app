@@ -8,7 +8,7 @@ const ForecastDetails = ({ forecast }) => {
   return (
     <div className="forecast-details">
       <div className="forecast-details__date">
-        {moment(date).format("ddd Do MMM")}
+        {moment(date).format("dddd D MMM")}
       </div>
       <div className="forecast-details__humidity">
         {`Humidity: ${humidity}%`}

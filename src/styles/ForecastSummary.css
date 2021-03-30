@@ -28,13 +28,11 @@
 
 .forecast-summary__icon {
   font-size: 35px;
-  padding: px;
 }
 
 @media only screen and (max-width: 750px) {
   .forecast-summary {
     width: 16%;
-    /* padding: 5px 4px; */
   }
 
   .forecast-summary > button {

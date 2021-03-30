@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
-/* @import url("normalize.css"); */
+@import url("normalize.css");
 
 body {
   background-color: grey;
