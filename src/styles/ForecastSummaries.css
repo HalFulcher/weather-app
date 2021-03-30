@@ -1,5 +1,5 @@
 .forecast-summaries {
   display: flex;
   justify-content: space-around;
-  margin: 30px;
+  margin: 30px 10px;
 }

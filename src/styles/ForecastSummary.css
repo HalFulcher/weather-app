@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px 5px;
-  background-color: rgba(255,255,255,0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   font-size: 0.8rem;
   width: 16%;
   text-align: center;
@@ -16,8 +16,8 @@
   font-size: 0.75rem;
   padding: 0px;
   margin: 5px;
-  background-color: rgba(255,255,255, 0);
-  font-family: "Montserrat", sans-serif;
+  background-color: rgba(255, 255, 255, 0);
+  font-family: sans-serif;
   outline: none;
   cursor: pointer;
 }
@@ -28,28 +28,26 @@
 
 .forecast-summary__icon {
   font-size: 35px;
-  padding: 8px;
+  padding: px;
 }
 
 @media only screen and (max-width: 750px) {
   .forecast-summary {
-      width: 16%;
-      padding: 5px 4px;
+    width: 16%;
+    /* padding: 5px 4px; */
   }
-  
+
   .forecast-summary > button {
-      font-size: 0.5rem;
-      padding: 0px;
-      margin: 5px;
+    font-size: 0.5rem;
+    margin: 1px;
   }
-  
+
   .forecast-summary > div {
-      margin: 3px;
-      padding: 0px;
+    margin: 1px;
   }
-  
+
   .forecast-summary__icon {
-      font-size: 20px;
-      padding: 5px;
+    font-size: 20px;
+    padding: 5px;
   }
 }
