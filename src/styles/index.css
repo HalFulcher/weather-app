@@ -1,3 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
+@import url("normalize.css");
+
 body {
-  background-color: #dddddd;
+  background-color: grey;
+}
+
+.weather-app {
+  height: 100vh;
+  padding: 1em;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  margin: 0;
 }

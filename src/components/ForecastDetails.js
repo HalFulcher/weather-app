@@ -22,7 +22,7 @@ const ForecastDetails = ({ forecast }) => {
         &deg;C
       </div>
       <div className="forecast-details__wind__speed">{`Wind speed: ${wind.speed}km`}</div>
-      <div className="forecast-details__wind__direction">{`Wind direction: ${wind.direction}`}</div>
+      <div className="forecast-details__wind__direction">{`Wind direction: ${wind.direction.toUpperCase()}`}</div>
     </div>
   );
 };

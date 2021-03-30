@@ -7,7 +7,7 @@ const SearchForm = ({ searchText, setSearchText, onSubmit }) => {
 
   return (
     <div className="search-form">
-      <getByLabelText htmlFor="city">City: </getByLabelText>
+      <getByLabelText htmlFor="city">UK City: </getByLabelText>
       <input
         type="text"
         name="city"
